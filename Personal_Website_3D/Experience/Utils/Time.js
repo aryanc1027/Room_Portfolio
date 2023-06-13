@@ -1,5 +1,8 @@
-export default class Sizes{
+import { EventEmitter } from "events";
+
+export default class Time extends EventEmitter {
     constructor() {
+        super()
         this.start = Date.now()
         this.current = this.start
         this.elapsed = 0
@@ -14,6 +17,7 @@ export default class Sizes{
         this.current = currentTime
         this.elapsed = this.current - this.start
 
-        window.requestAnimationFrame(()=> this.update);
+        this.emit("update")
+        window.requestAnimationFrame(()=> this.update());
     }
 }
