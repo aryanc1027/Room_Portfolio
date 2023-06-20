@@ -21,12 +21,12 @@ export default class Camera{
             0.1,
             1000);
         this.scene.add(this.perspectiveCamera)
-        this.perspectiveCamera.position.x = 30
-        this.perspectiveCamera.position.y = 24
-        this.perspectiveCamera.position.z = 20
-        this.perspectiveCamera.translateZ(5.0)
-        this.perspectiveCamera.translateX(10.0)
-        this.perspectiveCamera.translateY(7.0)
+        this.perspectiveCamera.position.x = 29
+        this.perspectiveCamera.position.y = 14
+        this.perspectiveCamera.position.z = 12
+        //this.perspectiveCamera.translateZ(10.0)
+        //this.perspectiveCamera.translateX(10.0)
+        //this.perspectiveCamera.translateY(7.0)
 
 
 
@@ -38,10 +38,10 @@ export default class Camera{
             (this.sizes.aspect * this.sizes.frustrum) /2,
             this.sizes.frustrum /2,
             -this.sizes.frustrum /2,
-            -100,
-            100
+            -50,
+            50
         );
-        this.orthographicCamera.position.y = 5.65
+        this.orthographicCamera.position.y = 6.65
         this.orthographicCamera.position.z = 10
         this.orthographicCamera.rotation.x = -Math.PI / 6;
 
@@ -84,7 +84,7 @@ export default class Camera{
     }
 
     update() {
-        console.log(this.perspectiveCamera.position)
+        //console.log(this.perspectiveCamera.position)
 
 
         this.controls.update()
