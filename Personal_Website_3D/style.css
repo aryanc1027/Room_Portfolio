@@ -9,6 +9,9 @@
 html, body {
   font-family: "Montserrat", sans-serif;
 }
+
+
+
 h1,
 section,
 p,
@@ -68,13 +71,35 @@ svg{
 .page{
   z-index: 999999;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .page-wrapper{
   position: relative;
 }
+/* Preloader stuff ------ */
+.animatedis {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+.intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+
+
+
+
 /* Toggle Bar ---------------------------------------- */
 .toggle-bar{
   position: fixed;
@@ -142,7 +167,7 @@ svg{
   padding: 1000px 4%;
   margin: 0;
   background-color: var(--color-background);
-  overflow: hidden;
+  overflow: hidden
 }
 
 .left{
@@ -276,7 +301,7 @@ svg{
 
 .hero-main{
   position: absolute;
-  bottom: 268px;
+  bottom: 168px;
   left: 0;
   color: var(--color-text);
 
@@ -305,6 +330,10 @@ svg{
   font-size: 32px;
   text-transform: uppercase;
   color: var(--color-text);
+
+}
+.inspiration {
+  font-size: 8px;
 
 }
 
@@ -363,3 +392,6 @@ svg{
     font-size: 18px;
   }
 }
+
+
+

@@ -22,6 +22,9 @@ export default class Controls {
         this.circleSecond = this.experience.world.floor.circleSecond;
         this.circleThird = this.experience.world.floor.circleThird;
         GSAP.registerPlugin(ScrollTrigger)
+
+        document.querySelector(".page").style.overflow = "visible";
+
         this.setSmoothScroll();
         this.setScrollTrigger();
 
@@ -30,7 +33,7 @@ export default class Controls {
     setupASScroll() {
         const asscroll = new ASScroll({
             disableRaf: true,
-            ease: 0.1,
+            ease: .1,
         });
 
         GSAP.ticker.add(asscroll.update);
@@ -308,14 +311,10 @@ export default class Controls {
                     z: 3
                 });
                 //Platform Stuff--------------------------------------
-                console.log(this.room.children)
-                this.thirdMoveTimeline = new GSAP.timeline({
+                this.secondPartTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "center center",
-                        end: "bottom bottom",
-                        scrub: 0.6,
-                        invalidateOnRefresh: true
                     },
                 });
 
@@ -328,20 +327,57 @@ export default class Controls {
                         })
                     }
                     if(child.name === "Light"){  //The Light
-                         this.second  = GSAP.to(child.scale, {
-                             x: 1,
-                             y: 1,
-                             z: 1,
-                             duration: 0.3,
-                         })
+                        this.second = GSAP.to(child.scale, {
+                            x: 2,
+                            y: 1,
+                            z: 4,
+                            duration: 0.3,
+                        })
+                    }
+                    if(child.name === "CarpetBig"){
+                        this.fifth = GSAP.to(child.scale, {
+                            x: 2,
+                            y: 1,
+                            z: 4,
+                            ease: "back.out(2)",
+                            duration: 0.3,
+                        })
+                    }
+                    if(child.name === "CarpetSmall1"){
+                        this.forth = GSAP.to(child.scale, {
+                            x: 1.5,
+                            y: .75,
+                            z: 3,
+                            ease: "back.out(2)",
+                            duration: 0.3,
+                        })
+                    }
+                    if(child.name === "CarpetSmall2"){
+                        this.third = GSAP.to(child.scale, {
+                            x: 1.5,
+                            y: .75,
+                            z: 3,
+                            ease: "back.out(2)",
+                            duration: 0.3,
+                        })
+                    }
+                    if(child.name === "PlantFront"){
+                        this.sixth = GSAP.to(child.scale, {
+                            x: 2,
+                            y: 1,
+                            z: 4,
+                            ease: "back.out(2)",
+                            duration: 0.3,
+                        })
                     }
 
-
-
-
-
-
-                })
+                });
+                this.secondPartTimeline.add(this.first);
+                this.secondPartTimeline.add(this.second);
+                this.secondPartTimeline.add(this.third);
+                this.secondPartTimeline.add(this.forth);
+                this.secondPartTimeline.add(this.fifth);
+                this.secondPartTimeline.add(this.sixth);
 
             },
 

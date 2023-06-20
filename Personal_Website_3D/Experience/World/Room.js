@@ -43,19 +43,18 @@ export default class Room {
             }
 
             if (child.name === "Mini_Floor") {
-                child.position.x = -.289521,
+                child.position.x = -.289521
                 child.position.z = 8.83572
             }
             //6: 18: 47
 
-            if(child.name === "Light") {  //light
-                child.scale.set(0,0,0)
-            }
+            if(child.name === "Light" ||
+                child.name === "CarpetBig" ||
+                child.name === "CarpetSmall1" ||
+                child.name === "CarpetSmall2" ||
+                child.name === "PlantFront") {
 
-            //child.scale.set(0, 0, 0);
-            if (child.name === "Cube") {
-                child.position.set(0, -1, 0);
-                child.rotation.y = Math.PI / 4;
+                child.scale.set(0,0,0)
             }
 
             this.roomChildren[child.name.toLowerCase()] = child;
@@ -63,14 +62,14 @@ export default class Room {
 
         const width = 0.5;
         const height = 0.7;
-        const intensity = 8;
+        const intensity = 10;
         const rectLight = new THREE.RectAreaLight(
             0xffffff,
             intensity,
             width,
             height
         );
-        rectLight.position.set(-5, 15, 15)
+        rectLight.position.set(0, 10, 15)
         rectLight.rotation.x = -Math.PI / 2
         rectLight.rotation.z = Math.PI / 4
         this.actualRoom.add(rectLight)
