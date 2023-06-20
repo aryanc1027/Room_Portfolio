@@ -228,6 +228,11 @@ svg{
   color: var(--color-text);
 }
 
+.section-sub-heading {
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .section-text{
   line-height: 2;
   margin-top: 18px;
@@ -335,6 +340,16 @@ svg{
 .inspiration {
   font-size: 8px;
 
+}
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-second-subheading,
+.hero-second-subheading.second-sub {
+  text-align: center;
 }
 
 /* Other Colors */
