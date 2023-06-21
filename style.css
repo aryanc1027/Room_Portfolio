@@ -231,6 +231,7 @@ svg{
 .section-sub-heading {
   font-size: 14px;
   font-weight: 500;
+  color: var(--color-text);
 }
 
 .section-text{
