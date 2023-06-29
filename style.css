@@ -379,6 +379,23 @@ svg{
   background-color: var(--color-green);
 }
 
+.arrow-svg-wrapper {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  animation: bounce 0.5s ease-in alternate infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(8px);
+  }
+}
+
 /* Media Query */
 
 @media (max-width: 968px){
