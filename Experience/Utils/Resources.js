@@ -53,7 +53,7 @@ export default class Resources extends EventEmitter{
                 this.videoTexture[asset.name].mageFilter = THREE.NearestFilter
                 this.videoTexture[asset.name].generateMinMaps = false
                 this.videoTexture[asset.name].colorSpace = THREE.sRGBEncoding
-
+                //this.videoTexture[asset.name].flipY = true;
                 this.singleAssetLoaded(asset, this.videoTexture[asset.name])
             }
 
