@@ -69,7 +69,7 @@ export default class Room {
             width,
             height
         );
-        rectLight.position.set(0, 10, 15)
+        rectLight.position.set(-3, 10, 5)
         rectLight.rotation.x = -Math.PI / 2
         rectLight.rotation.z = Math.PI / 4
         this.actualRoom.add(rectLight)
