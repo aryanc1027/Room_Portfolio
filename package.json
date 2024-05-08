@@ -16,6 +16,7 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "@ashthornton/asscroll": "^2.0.11"
+    "@ashthornton/asscroll": "^2.0.11",
+    "@vercel/analytics": "^1.2.2"
   }
 }
